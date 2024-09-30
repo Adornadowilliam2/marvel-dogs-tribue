@@ -1,6 +1,3 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import bg from "./assets/bg.png";
 import pitbull from "./assets/pitbull.png";
@@ -47,7 +44,7 @@ const data = [
   {
     id: 5,
     name: "Black Panther",
-    breed: "Bermese Mountain Dog",
+    breed: "Bermese Mountain",
     age: 5,
     image: bermesemountain,
   },
@@ -95,7 +92,7 @@ const data = [
   },
   {
     id: 12,
-    name: "Human Torch (Superman)",
+    name: "Wolverine",
     breed: "Golden Retriever",
     age: 5,
     image: goldenretriever,
@@ -104,18 +101,28 @@ const data = [
 function App() {
   return (
     <>
-      <img src={bg} alt="background" />
+      <img src={bg} alt="background" className="main" />
       <h1>Dogs Data</h1>
-      {data.map((dog) => (
-        <div key={dog.id}>
-          <h1>
-            {dog.id}.{dog.name}
-          </h1>
-          <img src={dog.image} alt={dog.name} />
-          <p>Breed: {dog.breed}</p>
-          <p>Age: {dog.age}</p>
-        </div>
-      ))}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: "10px",
+        }}
+      >
+        {data.map((dog) => (
+          <div key={dog.id} className="card">
+            <h1>
+              {dog.id}.{dog.name}
+            </h1>
+            <img src={dog.image} alt={dog.name} style={{ width: "100px" }} />
+            <p>Breed: {dog.breed}</p>
+            <p>Age: {dog.age}</p>
+          </div>
+        ))}
+      </div>
     </>
   );
 }
