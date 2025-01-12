@@ -103,6 +103,11 @@ function App() {
     <>
       <img src={bg} alt="background" className="main" />
       <h1>Dogs Data</h1>
+      <input
+        type="text"
+        placeholder="Seach"
+        style={{ padding: 5, marginBottom: "10px" }}
+      />
       <div
         style={{
           display: "flex",
