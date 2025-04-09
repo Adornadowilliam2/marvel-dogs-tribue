@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import bg from "./assets/bg.png";
+import bg from "./assets/bg.jpg";
 import pitbull from "./assets/pitbull.png";
 import husky from "./assets/husky.png";
 import saintbernard from "./assets/saintbernard.png";
@@ -50,7 +50,7 @@ const data = [
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Filter dogs based on the search term
+
   const filteredDogs = data.filter(
     (dog) =>
       dog.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
